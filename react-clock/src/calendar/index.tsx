@@ -1,18 +1,19 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField'
+import moment from 'moment';
 
 
-
-
-const Date = () => {
-
+const Calendar = () => {
+  let date = new Date();
+  let formatedDate = moment(date).format('YYYY-MM-DD');
+  
     return(
         <>
             <TextField
             id={"date"}
-            label={"Date"}
+            label={"calendar"}
             type={"date"}
-            value={"2017-05-24"}
+            value={formatedDate}
             >
 
             </TextField>
@@ -21,4 +22,4 @@ const Date = () => {
     );
 };
 
-export default Date;
+export default Calendar;
