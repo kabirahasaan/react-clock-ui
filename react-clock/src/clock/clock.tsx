@@ -23,7 +23,7 @@ const Clock = (props : IClock) =>{
         <Card>
            <Card.Body>
                <Card.Title 
-               style={{textAlign: "center"}}> {props.location} Time Now
+               style={{textAlign: "center"}} >  {props.location} Time Now
                </Card.Title>
                <Card.Subtitle>
                   { `${hour} Hour: ${minutes} Minutes: ${seconds} Seconds` } 
