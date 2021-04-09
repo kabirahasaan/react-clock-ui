@@ -36,5 +36,5 @@ const Clock = (props : IClock) =>{
         </Card>
     )
 };
-
+//example 
 export default Clock;
