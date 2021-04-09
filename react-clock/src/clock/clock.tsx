@@ -3,7 +3,11 @@ import { Card } from 'react-bootstrap';
 import { setSyntheticTrailingComments } from 'typescript';
 
 
-const Clock = () =>{
+interface IClock {
+    location : string;
+}
+
+const Clock = (props : IClock) =>{
 
     const [hour, setHour] = useState(0);
     const [minutes, setMinutes] = useState(0);
@@ -23,7 +27,7 @@ const Clock = () =>{
         <Card>
            <Card.Body>
                <Card.Title 
-               style={{textAlign: "center"}}>Time Now
+               style={{textAlign: "center"}}> {props.location} Time Now
                </Card.Title>
                <Card.Subtitle>
                   { `${year} Year: ${hour} Hour: ${minutes} Minutes: ${seconds} Seconds ` } 
