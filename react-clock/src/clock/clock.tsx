@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
 import { Card } from 'react-bootstrap';
-import { setSyntheticTrailingComments } from 'typescript';
-// demo for ridoy
 
 
 interface IClock {
@@ -21,7 +19,6 @@ const Clock = (props : IClock) =>{
         setMinutes(date.getMinutes());
         setSeconds(date.getSeconds());
         setFullYear(date.getFullYear());
-
     },1000);
 
     return(
