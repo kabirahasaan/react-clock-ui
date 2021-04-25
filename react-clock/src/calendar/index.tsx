@@ -8,6 +8,7 @@ import * as hijri from 'hijri-js'
 const formateHijriDate = (date : any) =>{
     let hijriConverter = hijri.initialize();
     let hijriDate = hijriConverter.toHijri(moment(date).format('DD-MM-YYYY'), '-');
+    console.log("hijriDate",hijriDate);
     return `${hijriDate.year}-0${hijriDate.month}-${hijriDate.day}`;
 }
 
