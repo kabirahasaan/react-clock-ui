@@ -32,18 +32,23 @@ export default function SimpleCard() {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Card className={classes.root}>
+    <Card className={classes.root} elevation = {20}>
       <CardContent> 
-        <Typography variant="h5" component="h2">
-          <Clock location="Current location"/>
-        </Typography>
-        <Typography variant="body2" component="p">
-         <Calendar/>;
 
+        <Typography variant="h5" component="h2">
+          <h5> Current location Time Now</h5>
+        
+          <Clock location=" "/>
+          
         </Typography>
+
+        <Typography variant="body2" component="p">
+         <Calendar/>
+        </Typography>
+
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Month Name : Ramadan</Button>
       </CardActions>
     </Card>
   );
