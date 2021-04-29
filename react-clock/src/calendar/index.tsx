@@ -5,7 +5,6 @@ import * as hijri from 'hijri-js';
 import { Card, CardContent, Typography } from '@material-ui/core';
 
 
-
 const formateHijriDate = (date : any) =>{
     let hijriConverter = hijri.initialize();
     let hijriDate = hijriConverter.toHijri(moment(date).format('DD-MM-YYYY'), '-');
@@ -24,14 +23,13 @@ const Calendar = () => {
   let formatedDate = moment(date).format('YYYY-MM-DD');
   const [currentDate, setCurrentDate] = useState(formatedDate);
   const [currentHijiriDate, setHijiriCurrentDate] = useState(formateHijriDate(date));
-  const [cradHijriMonth] = useState(formatCardHijrimonth(date));
 
 
   const onDateChange = async (event : any) => {
       await setCurrentDate(event.target.value);
       await setHijiriCurrentDate(formateHijriDate(currentDate));  
    };
-  
+
     return(
         <>
             <TextField
@@ -48,10 +46,14 @@ const Calendar = () => {
             type={"date"}
             value={currentHijiriDate}
             />
-            <Card variant='outlined' color='secondary'>
+            
+            <Card variant='outlined'>
                 <CardContent>
                     <Typography>
-                        Month name : {cradHijriMonth}
+                        Month name : {formatCardHijrimonth(date)}
+                    </Typography>
+                    <Typography>
+                    
                     </Typography>
                 </CardContent>
 

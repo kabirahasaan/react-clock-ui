@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Clock from './clock/clock';
 import Calendar from './calendar'
+import CardTime from './Card/cardTime'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <Clock location="Current location"/>
         <Calendar/>
+        <CardTime/>
       </header>
     </div>
   );
