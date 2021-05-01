@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import TextField from '@material-ui/core/TextField'
 import moment from 'moment';
 import * as hijri from 'hijri-js'
+import { Card,Typography } from '@material-ui/core';
 
 const formateHijriDate = (date : any) =>{
     let hijriConverter = hijri.initialize();
@@ -10,6 +11,11 @@ const formateHijriDate = (date : any) =>{
     return `${hijriDate.year}-0${hijriDate.month}-${hijriDate.day}`;
 };
 
+const formatHijriMonth = (date: any)=>{
+    let hijriConverter = hijri.initialize();
+    let hijiridate = hijriConverter.toHijri(moment(date).format('DD-MM-YYYY'),'-');
+    return `${hijiridate.monthName}`
+}
 const Calendar = () => {
   let date = new Date();
   let formatedDate = moment(date).format('YYYY-MM-DD');
@@ -40,7 +46,13 @@ const Calendar = () => {
             type={"date"}
             value={currentHijiriDate}
             />
-            
+
+            <Card>
+                <Typography>
+                    month name: {formatHijriMonth(date)}
+                </Typography>
+            </Card>
+
         </>
 
     );
