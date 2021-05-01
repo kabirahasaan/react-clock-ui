@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Clock from './clock/clock';
 import Calendar from './calendar'
+import CardTime from './Card/cardTime';
 
 
 
@@ -32,23 +33,26 @@ export default function SimpleCard() {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    <Card className={classes.root} elevation = {20}>
+    <Card className={classes.root} elevation = {20} variant='outlined'>
       <CardContent> 
 
         <Typography variant="h5" component="h2">
           <h5> Current location Time Now</h5>
         
-          <Clock location=" "/>
+             <Clock location=" "/>
           
         </Typography>
 
         <Typography variant="body2" component="p">
-         <Calendar/>
+             <Calendar/>
+        </Typography>
+        <Typography>
+             <CardTime/>
         </Typography>
 
       </CardContent>
       <CardActions>
-        <Button size="small">Month Name : Ramadan</Button>
+        <Button size="small"></Button>
       </CardActions>
     </Card>
   );
